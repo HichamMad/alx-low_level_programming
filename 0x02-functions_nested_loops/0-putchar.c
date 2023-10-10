@@ -1,10 +1,8 @@
 #include "main.h"
 /**
- * main - print _putchar
- * is written by Hisham
- * Return: 0
+ * main - Print _Putchar to the console
+ * Return: 0 (Success)
  */
-
 int main(void)
 {
 _putchar('_');
@@ -18,4 +16,3 @@ _putchar('r');
 _putchar('\n');
 return (0);
 }
-
