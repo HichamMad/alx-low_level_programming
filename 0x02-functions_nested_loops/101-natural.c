@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 /**
  * main - lists all the natural numbers below 10 that are multiples of 3 or 5,
