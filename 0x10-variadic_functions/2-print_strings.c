@@ -8,24 +8,34 @@
   */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i;
-	char *fav_song;
-	va_list p_songs;
+	va_list args;
+	unsigned int i = 0;
+	char *string;
 
-	for (i = 0; i < n; i++)
+	if (n > 0)
 	{
-		fav_song = va_arg(p_songs, char*);
-		if (fav_song == NULL)
-			printf("nil");
-		else
-			printf("%s", fav_song);
+		va_start(args, n);
 
-		if (separator != NULL && i < n - 1)
-			printf("%s", separator);
+		while (i < n)
+		{
+			string = va_arg(args, char *);
+			if (string == NULL)
+				printf("%s", "(nil)");
+			else
+				printf("%s", string);
+
+			if (i != n - 1 && separator != NULL)
+				printf("%s", separator);
+
+			i++;
+		}
+
+		va_end(args);
 	}
+
 	printf("\n");
-	va_end(p_songs);
 }
+
 
 
 
