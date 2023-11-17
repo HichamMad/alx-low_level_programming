@@ -5,21 +5,23 @@
 /**
  * print_list - Prints all the elements of a list_t list
  * @h: take the value of the single list
- * Return: The number of nodes
+ * Return: The number of nodes taken.
  */
-
 size_t print_list(const list_t *h)
 {
-	size_t ch = 0;
+	unsigned int count = 0;
 
+	if (h == NULL)
+		return (0);
 	while (h != NULL)
 	{
 		if (h->str == NULL)
-			printf("[0] (nil)\n");
+			printf("[%u] (nil)\n", h->len);
 		else
-			printf("[%d] %s\n", h->len, h->str);
-	h = h->next;
-		ch++;
+			printf("[%u] %s\n", h->len, h->str);
+		count = count + 1;
+		h = h->next;
 	}
-	return (ch);
+	return (count);
 }
+
