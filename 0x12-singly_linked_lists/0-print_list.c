@@ -3,23 +3,20 @@
 #include "lists.h"
 
 /**
- * print_list - Prints all the elements of a list_t list.
- * @h: take the value of the single list.
- * Return: The number of nodes in h.
+ * print_list - Prints all the elements of a list_t list
+ * @h: take the value of the single list
+ * Return: The number of nodes
  */
 
 size_t print_list(const list_t *h)
 {
-	size_t link = 0;
+	size_t count = 0;
 
-	while (h != NULL)
-	{
-		if (h->str == NULL)
-			printf("[0] (nil)\n");
-		else
-			printf("[%u] %s\n", h->len, h->str);
-		h = h->next;
-		link++;
-	}
-	return (link);
+	if (h == NULL)
+		return (0);
+
+	for (len = 0; h != NULL; h = h->next, count++)
+		printf("%d\n", h->n);
+
+	return (count);
 }
