@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
   * clear_bit - sets a bit at index to zero at given index
   * @n: paramater
